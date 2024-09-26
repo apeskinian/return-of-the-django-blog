@@ -4,6 +4,7 @@ dj-database-url==2.2.0
 dj3-cloudinary-storage==0.0.6
 Django==5.1.1
 django-allauth==65.0.1
+django-crispy-forms==2.3
 django-summernote==0.8.20.0
 gunicorn==23.0.0
 psycopg2==2.9.9
