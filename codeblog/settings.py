@@ -14,9 +14,6 @@ from pathlib import Path
 import os
 import sys
 import dj_database_url
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
 from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
@@ -175,12 +172,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# CLOUDINARY settings for ONLINE FILES.
-cloudinary.config(
-    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    api_key=os.environ.get('CLOUDINARY_API_KEY'),
-    api_secret=os.environ.get('CLOUDINARY_API_SECRET')
-)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
