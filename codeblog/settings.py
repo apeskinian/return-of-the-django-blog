@@ -44,6 +44,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,7 +54,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
@@ -61,6 +61,12 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'dblog',
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API'),
+    'API_SECRET': os.environ.get('CLOUDINARY_SECRET_API')
+}
 
 SITE_ID = 1
 
@@ -164,8 +170,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
