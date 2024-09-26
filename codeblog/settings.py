@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = development
 
 ALLOWED_HOSTS = ['8000-apeskinian-returnofthed-qfpi7ffcrah.ws.codeinstitute-ide.net','.herokuapp.com']
-
+CSRF_TRUSTED_ORIGINS = ['https://8000-apeskinian-returnofthed-qfpi7ffcrah.ws.codeinstitute-ide.net','https://*.herokuapp.com/']
 
 # Application definition
 
